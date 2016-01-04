@@ -43,13 +43,13 @@ public class UserInterFace extends JFrame {
 	public UserInterFace() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		MenuScene ms = new MenuScene();
 		contentPane.add(ms);
 		Director director = new Director(this);
-
 
 		GameManager.getInstance().setDirector(director);
 

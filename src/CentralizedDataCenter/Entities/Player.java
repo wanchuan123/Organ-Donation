@@ -90,9 +90,13 @@ public class Player extends Sprite{
 	}
 	
 	public Organ StealedOrgan(){
-		int randomnum = (int) (Math.random()*_organs.size());
+		Organ stealedorgan = null;
+		do{
+			int randomnum = (int) (Math.random()*_organs.size());
+			stealedorgan = _organs.get(randomnum);
+		}while(stealedorgan.getHP()<=0);
+		
 
-		Organ stealedorgan = _organs.get(randomnum);
 		return stealedorgan;
 
 	}
